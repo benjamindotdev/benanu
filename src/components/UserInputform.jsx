@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
 
-export default function UserInputForm() {
+export default function UserInputForm({ destination, setDestination }) {
   //   const [location, setLocation] = useState("");
-  const [destination, setDestination] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
