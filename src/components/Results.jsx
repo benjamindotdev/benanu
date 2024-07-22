@@ -24,7 +24,7 @@ const Result = ({ mode, ...rest }) => {
   const transport = transportModes[mode];
 
   return (
-    <div className="result">
+    <div className="flex flex-col gap-2">
       <h2>
         {transport.label} {transport.icon}
       </h2>
