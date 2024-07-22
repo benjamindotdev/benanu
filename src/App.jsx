@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import {
   APIProvider,
   Map,
@@ -33,19 +33,17 @@ const App = () => {
   }, [destination]);
 
   return (
-    <main className="h-100vh w-100vw">
-      <h1>Benanu</h1>
+    <main className="h-100vh w-100vw bg-pink-500 p-0 m-0">
+      <h1 className="text-pink-500">Benanu</h1>
       <p>
         Benanu is a simple web application that displays a map using the Google
         Maps API.
       </p>
-
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <UserInputForm
           destination={destination}
           setDestination={setDestination}
         />
-
         <Map
           style={{ width: "90vh", height: "90vw" }}
           defaultCenter={{ ...ironhack }}

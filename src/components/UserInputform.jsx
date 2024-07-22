@@ -18,16 +18,14 @@ export default function UserInputForm({ destination, setDestination }) {
 
   return (
     <div className="max-w-md mx-auto p-4 pt-6 md:p-6 lg:p-12">
-      <label className="block">
-        <span className="text-gray-700">Destination: </span>
-        <input
-          ref={inputRef}
-          type="text"
-          value={destination}
-          onChange={(e) => setDestination(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-      </label>
+      <span className="text-gray-700">Destination: </span>
+      <input
+        ref={inputRef}
+        type="text"
+        value={destination}
+        onChange={(e) => setDestination(e.target.value)}
+        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+      />
     </div>
   );
 }
