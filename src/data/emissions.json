@@ -1,0 +1,12 @@
+[
+  {
+    "plane": 246,
+    "car": 171,
+    "motorbike": 114,
+    "electricCar": 47,
+    "train": 35,
+    "coach": 27,
+    "bicycle": 0,
+    "foot": 0
+  }
+]

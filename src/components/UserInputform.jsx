@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-
-export default function UserInputForm() {
+/* eslint-disable react/prop-types */
+import { Autocomplete, DirectionsRenderer } from "@react-google-maps/api";
+export default function UserInputForm({ destination, setDestination }) {
   //   const [location, setLocation] = useState("");
-  const [destination, setDestination] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,7 +15,7 @@ export default function UserInputForm() {
         {/* <label className="block">
           <span className="text-gray-700">Location:</span>
           <input
-            type="text"
+git            type="text"
             value={location}
             onChange={(event) => setLocation(event.target.value)}
             className="block w-full pl-10 text-sm text-gray-700"
@@ -25,13 +24,15 @@ export default function UserInputForm() {
         </label> */}
         <label className="block">
           <span className="text-gray-700">Destination: </span>
-          <input
-            type="text"
-            value={destination}
-            onChange={(event) => setDestination(event.target.value)}
-            className="block w-full pl-10 text-sm text-gray-700"
-            placeholder="Enter your destination"
-          />
+          <Autocomplete>
+            <input
+              type="text"
+              value={destination}
+              onChange={(event) => setDestination(event.target.value)}
+              className="block w-full pl-10 text-sm text-gray-700"
+              placeholder="Enter your destination"
+            />
+          </Autocomplete>
         </label>
         <button
           type="submit"
