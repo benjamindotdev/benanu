@@ -8,6 +8,7 @@ import {
 } from "@vis.gl/react-google-maps";
 import { useEffect, useState } from "react";
 import UserInputForm from "./components/UserInputform";
+import Navbar from "./components/Navbar";
 
 const ironhack = {
   lat: 52.53308,
@@ -33,8 +34,8 @@ const App = () => {
   }, [destination]);
 
   return (
-    <main className="h-100vh w-100vw bg-pink-500 p-0 m-0">
-      <h1 className="text-pink-500">Benanu</h1>
+    <main className="h-100vh w-100vw bg-dark p-0 m-0">
+      <Navbar />
       <p>
         Benanu is a simple web application that displays a map using the Google
         Maps API.
