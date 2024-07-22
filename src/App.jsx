@@ -37,7 +37,6 @@ const App = () => {
   return (
     <main className="h-100vh w-100vw">
       <Navbar />
-      <h1>Benanu</h1>
       <p>
         Benanu is a simple web application that displays a map using the Google
         Maps API.
