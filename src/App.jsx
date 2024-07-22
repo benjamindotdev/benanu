@@ -14,7 +14,7 @@ const ironhack = {
   lng: 13.45321,
 };
 
-const dataLink = "https://ourworldindata.org/travel-carbon-footprint";
+//link for data "https://ourworldindata.org/travel-carbon-footprint";
 
 const App = () => {
   const map = useMap();
@@ -28,6 +28,10 @@ const App = () => {
     });
   }, [map]);
 
+  useEffect(() => {
+    console.log(destination);
+  }, [destination]);
+
   return (
     <main className="h-100vh w-100vw">
       <h1>Benanu</h1>
@@ -35,11 +39,13 @@ const App = () => {
         Benanu is a simple web application that displays a map using the Google
         Maps API.
       </p>
-      <UserInputForm
-        destination={destination}
-        setDestination={setDestination}
-      />
+
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+        <UserInputForm
+          destination={destination}
+          setDestination={setDestination}
+        />
+
         <Map
           style={{ width: "90vh", height: "90vw" }}
           defaultCenter={{ ...ironhack }}
