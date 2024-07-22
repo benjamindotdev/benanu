@@ -6,6 +6,8 @@ const ironhack = {
   lng: 13.45321,
 };
 
+const dataLink = "https://ourworldindata.org/travel-carbon-footprint";
+
 const App = () => (
   <main className="h-100vh w-100vw">
     <h1>Benanu</h1>
