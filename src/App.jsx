@@ -7,15 +7,21 @@ import {
   useMap,
 } from "@vis.gl/react-google-maps";
 import { useEffect, useState } from "react";
-import UserInputForm from "./components/UserInputform";
+import UserInputForm from "./components/UserInput";
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Result from "./components/Results";
+import ResultContainer from "./components/ResultContainer";
 const ironhack = {
   lat: 52.53308,
   lng: 13.45321,
 };
 
 //link for data "https://ourworldindata.org/travel-carbon-footprint";
+
+const socials = {
+  benjamin: "https://github.com/benjamindotdev/",
+  senanu: "https://github.com/Senalniho",
+};
 
 const App = () => {
   const map = useMap();
@@ -33,41 +39,41 @@ const App = () => {
     console.log(destination);
   }, [destination]);
 
-  return (
-    <main className="h-100vh w-100vw flex flex-col gap-6">
-      <Navbar />
-      <div className="flex flex-row gap-6 card">
-        <Result mode="car" cost={50} distance={200} co2Emissions={30} />
-        <Result mode="train" cost={50} distance={200} co2Emissions={30} />
-        <Result mode="plane" cost={50} distance={200} co2Emissions={30} />
-      </div>
+  //add routes, route, links from react-router-dom
 
-      <h1>Benanu</h1>
-      <p>
-        Benanu is a simple web application that displays a map using the Google
-        Maps API.
-      </p>
-      <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-        <UserInputForm
-          destination={destination}
-          setDestination={setDestination}
-        />
-        <Map
-          style={{ width: "90vh", height: "90vw" }}
-          defaultCenter={{ ...ironhack }}
-          defaultZoom={15}
-          gestureHandling={"greedy"}
+  return (
+    <>
+      <Navbar socials={socials} />
+      <main className=" flex flex-col gap-6 justify-center">
+        <Hero socials={socials} />
+
+        <ResultContainer />
+
+        <APIProvider
+          apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
+          className="flex flex-col justify-center"
         >
-          <Marker position={{ ...ironhack }}>
-            <Pin
-              background={"#FBBC04"}
-              glyphColor={"#000"}
-              borderColor={"#000"}
-            />
-          </Marker>
-        </Map>
-      </APIProvider>
-    </main>
+          <UserInputForm
+            destination={destination}
+            setDestination={setDestination}
+          />
+          <Map
+            style={{ width: "500px", height: "500px" }}
+            defaultCenter={{ ...ironhack }}
+            defaultZoom={15}
+            gestureHandling={"greedy"}
+          >
+            <Marker position={{ ...ironhack }}>
+              <Pin
+                background={"#FBBC04"}
+                glyphColor={"#000"}
+                borderColor={"#000"}
+              />
+            </Marker>
+          </Map>
+        </APIProvider>
+      </main>
+    </>
   );
 };
 
