@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 
-require("dotenv").config();
-const jsonServer = require("json-server");
-const morgan = require("morgan");
+import "dotenv/config";
+import jsonServer from "json-server";
+import morgan from "morgan";
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
@@ -21,9 +21,3 @@ server.use(router);
 server.listen(PORT, () => {
   console.log(`JSON Server is running at port ${PORT}`);
 });
-
-const Server = () => {
-  return <div></div>;
-};
-
-export default Server;
