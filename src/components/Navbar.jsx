@@ -18,6 +18,10 @@ const links = [
     name: "Dashboard",
     path: "/dashboard",
   },
+  {
+    name: "Result",
+    path: "/result",
+  },
 ];
 
 const Navbar = ({ socials }) => {
