@@ -14,6 +14,7 @@ import ResultContainer from "./components/ResultContainer";
 import { Routes, Route } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import DashboardPage from "./pages/DashboardPage";
 
 const ironhack = {
   lat: 52.53308,
@@ -52,8 +53,9 @@ const App = () => {
         <Routes>
           <Route path="/about" element={<AboutPage socials={socials} />} />
           <Route path="/contact" element={<ContactPage socials={socials} />} />
-          {/* <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          {/* <Route path="/" element={<LandingPage />} />
+           />
           
 
           
