@@ -12,6 +12,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ResultContainer from "./components/ResultContainer";
 import { Routes, Route } from "react-router-dom";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import DashboardPage from "./pages/DashboardPage";
 
 const ironhack = {
   lat: 52.53308,
@@ -46,14 +49,17 @@ const App = () => {
   return (
     <>
       <Navbar socials={socials} />
-      <main className=" flex flex-col gap-6 justify-center">
+      <main className=" flex flex-col gap-6 justify-start items-center p-6">
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage socials={socials} />} />
+          <Route path="/contact" element={<ContactPage socials={socials} />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/about" element={<AboutPage />} />
+          {/* <Route path="/" element={<LandingPage />} />
+           />
+          
 
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/results" element={<ResultsPage />} />
+          
+          <Route path="/results" element={<ResultsPage />} /> */}
         </Routes>
 
         <APIProvider
