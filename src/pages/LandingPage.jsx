@@ -1,8 +1,6 @@
-import React from "react";
-import Hero from "../components/Hero";
 import LandingPageCarousel from "../components/LandingPageCarousel";
 
-export default function LandingPage({ socials }) {
+export default function LandingPage() {
   return (
     <div className="">
       <section
@@ -31,9 +29,6 @@ export default function LandingPage({ socials }) {
       <section>
         <h1 className="px-7">Global statistics</h1>
       </section>
-      <div className="flex flex-col justify-center items-center gap-6">
-        <Hero socials={socials} />
-      </div>
     </div>
   );
 }

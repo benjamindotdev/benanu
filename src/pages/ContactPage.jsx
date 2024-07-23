@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import PageContainer from "../components/PageContainer";
 import PageHeader from "../components/PageHeader";

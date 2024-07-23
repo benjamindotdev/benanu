@@ -8,15 +8,13 @@ import {
 } from "@vis.gl/react-google-maps";
 import { useEffect, useState } from "react";
 import UserInputForm from "./components/UserInput";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import ResultContainer from "./components/ResultContainer";
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import DashboardPage from "./pages/DashboardPage";
-
+import ResultPage from "./pages/ResultPage";
 
 const ironhack = {
   lat: 52.53308,
@@ -57,7 +55,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage socials={socials} />} />
           <Route path="/contact" element={<ContactPage socials={socials} />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          {/* <Route path="/results" element={<ResultsPage />} /> */}
+          <Route path="/result" element={<ResultPage />} />
         </Routes>
 
         <APIProvider
