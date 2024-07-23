@@ -29,7 +29,7 @@ const Hero = ({ socials }) => {
             are here to help you travel with a clear conscience. <br />
           </p>
           <button className="btn bg-accent text-primary hover:text-light">
-            Plan your next trip with <strong>CarbonTracker</strong>
+            Plan your next trip with <strong>seeO2</strong>
           </button>
         </div>
       </div>
