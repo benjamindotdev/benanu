@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Hero = ({ socials }) => {
   return (
-    <div className="hero bg-transparent min-h-screen">
+    <div className="hero bg-transparent">
       <div className="hero-content text-center">
         <div className="flex flex-col gap-6">
           <h1 className="text-5xl font-bold text-left whitespace-nowrap">
