@@ -4,7 +4,7 @@ export default function LandingPage() {
   return (
     <div className="">
       <section
-        className="px-6 py-6"
+        className="px-6 py-6 flex flex-col justify-between items-baseline"
         style={{
           backgroundImage: `url(https://one-more-tree.org/wp-content/uploads/2024/02/view-green-forest-trees-with-co2-870x563.jpg)`,
           backgroundSize: "cover",
@@ -12,20 +12,19 @@ export default function LandingPage() {
           height: "80vh", // adjust the height to your liking
         }}
       >
-        <p className="text-8xl text-left px-7 text-white">
+        <p className="text-6xl text-left  text-white">
           Emissions visibility <br />
-          for immediate
+          for immediate <br />
+          <span className="text-6xl font-bold text-orange-500  "> impact</span>
         </p>
-        <p className="text-9xl px-7 text-white">
-          <span className="text-9xl font-bold text-orange-500  "> impact</span>
-        </p>
-        <p className="absolute bottom-0 right-0 p-40 text-5xl 5text-right  px-12 text-white">
+        <p className="text-2xl  text-white mt-10 self-end">
           This platform provides realtime <br />
           emissions data to make reliable <br />
           decisions.
         </p>
       </section>
       <LandingPageCarousel />
+
       <section>
         <h1 className="px-7">Global statistics</h1>
       </section>
