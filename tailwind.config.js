@@ -13,9 +13,13 @@ export default {
       colors: {
         primary: "#fefae0",
         secondary: "#dda15e",
-        accent: "#bc6c25",
+        accent: "#DE99A3",
         light: "#74FF5C",
         dark: "#283618",
+      },
+      fontFamily: {
+        serif: ["Playfair Display", "serif"],
+        sans: ["Rubik", "sans-serif"],
       },
     },
   },
