@@ -47,7 +47,7 @@ const App = () => {
   //add routes, route, links from react-router-dom
 
   return (
-    <>
+    <div className="mx-auto w-[600px] md:w-[700px] lg:w-[1000px] xl:[1200px]">
       <Navbar socials={socials} />
       <main className=" flex flex-col gap-6 justify-start items-center p-6">
         <Routes>
@@ -56,9 +56,6 @@ const App = () => {
           <Route path="/dashboard" element={<DashboardPage />} />
           {/* <Route path="/" element={<LandingPage />} />
            />
-          
-
-          
           <Route path="/results" element={<ResultsPage />} /> */}
         </Routes>
 
@@ -86,7 +83,7 @@ const App = () => {
           </Map>
         </APIProvider>
       </main>
-    </>
+    </div>
   );
 };
 
