@@ -1,6 +1,5 @@
 import LandingPageCarousel from "../components/LandingPageCarousel";
 import ProgressiveCarousel from "../components/ProgressiveCarousel";
-import Footer from "../components/Footer";
 import TeamMembers from "../components/TeamMembers";
 import WhyChooseUs from "../components/WhyChooseUs";
 
@@ -34,7 +33,6 @@ export default function LandingPage() {
       {/* <LandingPageCarousel /> */}
       <WhyChooseUs />
       <TeamMembers />
-      <Footer />
     </div>
   );
 }
