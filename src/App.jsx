@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import DashboardPage from "./pages/DashboardPage";
 import ResultPage from "./pages/ResultPage";
+import AdminPage from "./pages/AdminPage";
 import Footer from "./components/Footer";
 
 //link for data "https://ourworldindata.org/travel-carbon-footprint";
@@ -26,6 +27,8 @@ const App = () => {
           <Route path="/contact" element={<ContactPage socials={socials} />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/result" element={<ResultPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/:db/:id" element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />

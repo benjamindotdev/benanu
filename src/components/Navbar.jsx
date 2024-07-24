@@ -22,6 +22,10 @@ const links = [
     name: "Result",
     path: "/result",
   },
+  {
+    name: "Admin",
+    path: "/admin",
+  },
 ];
 
 const Navbar = ({ socials }) => {
