@@ -2,7 +2,7 @@
 
 const PageContainer = ({ children }) => {
   return (
-    <section className="flex flex-col gap-6 justify-start items-center">
+    <section className="px-6 flex flex-col gap-12 justify-start items-center w-full h-full">
       {children}
     </section>
   );
