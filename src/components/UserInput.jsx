@@ -6,14 +6,14 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function UserInputForm() {
-  const { postData } = useTripContext();
+  //const { postData } = useTripContext();
   const [destination, setDestination] = useState("");
   const [responses, setResponses] = useState([]);
 
   const handleClick = (e) => {
     e.preventDefault();
     console.log(destination);
-    postData({ destination });
+    //postData({ destination });
     axios
       .get(
         `https://graphhopper.com/api/1/geocode?q=${destination}&locale=en&key=${
@@ -50,7 +50,7 @@ export default function UserInputForm() {
       <ul className="flex flex-col gap-2">
         {responses.map((response) => (
           <Link
-            to={`/result?lat=${response.point.lat}&lng=${response.point.lng}`}
+            to={`/result?lat=${response.point.lat}&lng=${response.point.lng}&destination=${response.name}`}
             key={response.osm_id}
             className="flex flex-row gap-2 p-2 bg-primary text-dark font-bold rounded-xl "
           >
