@@ -1,10 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 const Hero = ({ socials }) => {
   return (
-    <div className="hero bg-transparent">
+    <div className="hero bg-transparent text-primary">
       <div className="hero-content text-center">
         <div className="flex flex-col gap-6">
-          <h1 className="text-5xl font-bold text-left whitespace-nowrap">
+          <h1 className="text-5xl font-bold text-left whitespace-nowrap text-white">
             Track your carbon footprint <br />
             before you've taken a step
           </h1>

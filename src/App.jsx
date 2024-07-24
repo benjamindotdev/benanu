@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import DashboardPage from "./pages/DashboardPage";
 import ResultPage from "./pages/ResultPage";
+import Footer from "./components/Footer";
 
 //link for data "https://ourworldindata.org/travel-carbon-footprint";
 
@@ -16,9 +17,9 @@ const socials = {
 
 const App = () => {
   return (
-    <div className="mx-auto w-[600px] md:w-[700px] lg:w-[1000px] xl:[1200px]">
+    <div className="mx-auto h-full w-[600px] md:w-[800px] lg:w-[1000px] xl:[1200px]">
       <Navbar socials={socials} />
-      <main className=" flex flex-col gap-6 justify-start items-center p-6">
+      <main className="h-[90%] flex flex-col overflow-auto justify-start items-center">
         <Routes>
           <Route path="/" element={<LandingPage socials={socials} />} />
           <Route path="/about" element={<AboutPage socials={socials} />} />
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/result" element={<ResultPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 };

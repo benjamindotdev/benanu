@@ -1,4 +1,10 @@
 import LandingPageCarousel from "../components/LandingPageCarousel";
+import ProgressiveCarousel from "../components/ProgressiveCarousel";
+import Footer from "../components/Footer";
+import TeamMembers from "../components/TeamMembers";
+import WhyChooseUs from "../components/WhyChooseUs";
+
+// Ensure the correct path for Swiper CSS
 
 export default function LandingPage() {
   return (
@@ -9,25 +15,26 @@ export default function LandingPage() {
           backgroundImage: `url(https://one-more-tree.org/wp-content/uploads/2024/02/view-green-forest-trees-with-co2-870x563.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "80vh", // adjust the height to your liking
+          height: "60vh", // Adjust the height to your liking
         }}
       >
-        <p className="text-6xl text-left  text-white">
+        <p className="text-6xl text-left text-white">
           Emissions visibility <br />
           for immediate <br />
-          <span className="text-6xl font-bold text-orange-500  "> impact</span>
+          <span className="text-6xl font-bold text-orange-500"> impact</span>
         </p>
-        <p className="text-2xl  text-white mt-10 self-end">
-          This platform provides realtime <br />
+        <p className="text-2xl text-white mt-10 self-end">
+          This platform provides real-time <br />
           emissions data to make reliable <br />
           decisions.
         </p>
       </section>
-      <LandingPageCarousel />
 
-      <section>
-        <h1 className="px-7">Global statistics</h1>
-      </section>
+      <ProgressiveCarousel />
+      {/* <LandingPageCarousel /> */}
+      <WhyChooseUs />
+      <TeamMembers />
+      <Footer />
     </div>
   );
 }
