@@ -28,6 +28,7 @@ const App = () => {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/result" element={<ResultPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/:db/:id" element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />
