@@ -57,6 +57,7 @@ const TripProvider = ({ children }) => {
         setUsers,
         trip,
         setTrip,
+        postData,
       }}
     >
       {children}

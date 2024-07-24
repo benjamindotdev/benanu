@@ -1,6 +1,5 @@
 import LandingPageCarousel from "../components/LandingPageCarousel";
 import ProgressiveCarousel from "../components/ProgressiveCarousel";
-import TeamMembers from "../components/TeamMembers";
 import WhyChooseUs from "../components/WhyChooseUs";
 
 // Ensure the correct path for Swiper CSS
