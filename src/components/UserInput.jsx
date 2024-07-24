@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useTripContext } from "../context/TripProvider";
+import PageSubHeader from "./PageSubHeader";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function UserInputForm() {
   const { postData } = useTripContext();
@@ -20,19 +22,20 @@ export default function UserInputForm() {
       )
       .then((response) => {
         console.log(response.data);
-        setResponses([response.data]);
+        setResponses(response.data.hits);
       })
       .catch((error) => {
         console.log(error.response, import.meta.env.VITE_GRAPHHOPPER_API_KEY);
       })
       .finally(() => {
-        console.log("Request completed.");
+        console.log(responses);
       });
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex flex-row gap-2">
+    <div className="flex flex-col gap-2 p-6 rounded-xl card bg-white w-full">
+      <PageSubHeader>Enter your destination</PageSubHeader>
+      <div className="flex flex-row gap-2 items-center">
         <input
           type="text"
           value={destination}
@@ -45,7 +48,17 @@ export default function UserInputForm() {
         </button>
       </div>
       <ul className="flex flex-col gap-2">
-        {responses.map((response) => JSON.stringify(response))}
+        {responses.map((response) => (
+          <Link
+            to={`/result?lat=${response.point.lat}&lng=${response.point.lng}`}
+            key={response.osm_id}
+            className="flex flex-row gap-2 p-2 bg-primary text-dark font-bold rounded-xl "
+          >
+            <p>
+              {response.name} ({response.osm_value}), {response.country}
+            </p>
+          </Link>
+        ))}
       </ul>
     </div>
   );
