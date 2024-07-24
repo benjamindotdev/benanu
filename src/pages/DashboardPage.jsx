@@ -1,13 +1,14 @@
 import PageContainer from "../components/PageContainer";
 import PageHeader from "../components/PageHeader";
 import PageText from "../components/PageText";
+import Dashboard from "../components/Dashboard";
 
 const DashboardPage = () => {
   return (
     <PageContainer>
-      <PageHeader>Dashboard</PageHeader>
-      <div className="grid grid-cols-2 grid-rows-3 gap-6 card glass p-6">
-        <PageText>
+      {/* <PageHeader>Dashboard</PageHeader>
+      <div className="grid grid-cols-2 grid-rows-3 gap-6 card glass p-6 ">
+        <PageText className="text-slate-950">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
           quaerat harum earum quod expedita modi nam laudantium fugiat quasi
           suscipit.
@@ -27,7 +28,8 @@ const DashboardPage = () => {
           quaerat harum earum quod expedita modi nam laudantium fugiat quasi
           suscipit.
         </PageText>
-      </div>
+      </div> */}
+      <Dashboard />
     </PageContainer>
   );
 };
