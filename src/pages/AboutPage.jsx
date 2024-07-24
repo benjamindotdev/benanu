@@ -24,7 +24,7 @@ const About = () => {
       <section className="flex flex-col md:flex-row items-center mb-16">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img
-            src="https://via.placeholder.com/600x400"
+            src="https://img.freepik.com/free-photo/sustainable-development-goals-still-life_23-2150196693.jpg?t=st=1721833597~exp=1721837197~hmac=f26547a544e5eafb4c5633f42d0825119efe07b83c228bb112a645d3f6be6375&w=996"
             alt="Intro Image"
             className="w-full h-auto rounded-lg shadow-lg"
           />
