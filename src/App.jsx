@@ -18,7 +18,7 @@ const socials = {
 
 const App = () => {
   return (
-    <div className="mx-auto h-full w-[600px] md:w-[800px] lg:w-[1000px] xl:[1200px]">
+    <div className=" mx-auto h-full w-[600px] md:w-[800px] lg:w-[1000px] xl:[1200px]">
       <Navbar socials={socials} />
       <main className="h-[90%] flex flex-col overflow-auto justify-start items-center">
         <Routes>
