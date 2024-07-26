@@ -32,7 +32,6 @@ const links = [
 const Navbar = () => {
   const { founders } = useInfoContext();
   const [benjamin, senanu] = founders;
-  console.log(founders);
   return (
     <nav className=" z-10 py-0 my-0 relative mx-auto px-6 bg-transparent text-white h-[10%] flex flex-row justify-between items-center rounded-b-3xl w-[600px] md:w-[800px] lg:e-[1000px] xl:w-[1200px]">
       <h1 className="hover:text-light text-2xl font-bold">seeO2</h1>

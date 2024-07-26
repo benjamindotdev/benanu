@@ -1,9 +1,12 @@
-import { FaGithub } from "react-icons/fa";
-import { FaServer } from "react-icons/fa6";
-import { FaComputer } from "react-icons/fa6";
-import { FaReact } from "react-icons/fa6";
-import { FaNodeJs } from "react-icons/fa6";
+import {
+  FaGithub,
+  FaServer,
+  FaComputer,
+  FaReact,
+  FaNodeJs,
+} from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { SiRailway, SiNetlify, SiDaisyui } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -34,6 +37,22 @@ export default function Footer() {
           <RiTailwindCssFill />
         </a>
         <a
+          href="https://daisyui.com/"
+          target="_blank"
+          rel="noreferrer"
+          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
+        >
+          <SiDaisyui />
+        </a>
+        <a
+          href="https://www.netlify.com/"
+          target="_blank"
+          rel="noreferrer"
+          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
+        >
+          <SiNetlify />
+        </a>
+        <a
           href="https://github.com/benjamindotdev/seeo2-frontend"
           target="_blank"
           rel="noreferrer"
@@ -41,6 +60,14 @@ export default function Footer() {
         >
           <FaComputer />
           <FaGithub />
+        </a>
+        <a
+          href="https://railway.app"
+          target="_blank"
+          rel="noreferrer"
+          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
+        >
+          <SiRailway />
         </a>
         <a
           href="https://github.com/benjamindotdev/seeo2-backend"

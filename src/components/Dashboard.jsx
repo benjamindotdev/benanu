@@ -1,4 +1,3 @@
-import React from "react";
 import { Bar, Pie } from "react-chartjs-2";
 import Speedometer from "react-d3-speedometer";
 import "chart.js/auto"; // Import to auto-register chart components

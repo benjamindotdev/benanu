@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center h-full w-full relative bg-slate-900">
+    <div className="flex flex-col items-center h-full w-full relative bg-dark">
       <Navbar />
       <main className="mx-auto top-0 absolute flex flex-col overflow-auto justify-start items-center z-0">
         <Routes>

@@ -1,7 +1,6 @@
 import { useInfoContext } from "../context/InfoContext";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { FaGlobe } from "react-icons/fa";
 
 const TeamMembers = () => {
   const { founders } = useInfoContext();

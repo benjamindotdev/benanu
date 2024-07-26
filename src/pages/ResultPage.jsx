@@ -52,8 +52,6 @@ const ResultPage = () => {
     };
   });
 
-  //https://www.storyblok.com/tp/how-to-send-multiple-requests-using-axios
-
   useEffect(() => {
     if (lat && lng && destination && ironhack.lat && ironhack.lng) {
       axios
