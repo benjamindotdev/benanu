@@ -61,23 +61,17 @@ const ResultPage = () => {
       axios
         .all(requests.map((req) => req.request))
         .then((responses) => {
-          responses.forEach((res, index) => {
-            const result = {
-              destination: destination,
-              distance: res.data.paths[0].distance,
-              time: res.data.paths[0].time,
-              profile: requests[index].profile,
-            };
-            console.log("result =", result);
-            setResults((prev) => [...prev, result]);
-          });
+          const newResults = responses.map((res, index) => ({
+            destination: destination,
+            distance: (res.data.paths[0].distance / 1000).toFixed(2),
+            time: res.data.paths[0].time / 60000,
+            profile: requests[index].profile,
+          }));
+
+          setResults(newResults);
         })
         .catch((error) => {
           console.log(error.response);
-        })
-        .finally(() => {
-          console.log("results =", results);
-          setTrips([...trips, results]);
         });
     }
   }, [lat, lng]);
