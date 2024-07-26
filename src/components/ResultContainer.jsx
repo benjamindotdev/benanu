@@ -1,21 +1,30 @@
 /* eslint-disable react/prop-types */
+import { useSearchParams } from "react-router-dom";
 import ResultCard from "./ResultCard";
+import emissions from "../data/emissions.json";
 
-const ResultContainer = ({ result }) => {
+const ResultContainer = ({ results }) => {
+  const [searchParams] = useSearchParams();
+  const destination = searchParams.get("destination");
+
   return (
     <>
-      {result && (
-        <div className="flex flex-col gap-6 card justify-center items-center">
-          <h1 className="text-3xl">{result.destination}</h1>
-          <p>Distance = {(result.distance / 1000).toFixed(1)} km</p>
-          <p>Time = {(result.time / 60000).toFixed(1)} min</p>
+      {results && (
+        <div className="flex flex-col w-full gap-6 card justify-start items-start">
+          <h1 className="text-xl text-accent">Destination: {destination}</h1>
+          {results.map((result, index) => {
+            return (
+              <ResultCard
+                key={index}
+                distance={result.distance}
+                emissions={result.distance * emissions[0][result.profile]}
+                time={result.time}
+                profile={result.profile}
+              />
+            );
+          })}
         </div>
       )}
-      <div className="flex flex-row gap-6 card">
-        <ResultCard mode="car" cost={50} distance={200} co2Emissions={30} />
-        <ResultCard mode="train" cost={50} distance={200} co2Emissions={30} />
-        <ResultCard mode="plane" cost={50} distance={200} co2Emissions={30} />
-      </div>
     </>
   );
 };

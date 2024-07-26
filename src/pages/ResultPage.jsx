@@ -9,7 +9,7 @@ import axios from "axios";
 import { useTripContext } from "../context/TripProvider";
 
 const ResultPage = () => {
-  const [result, setResult] = useState({});
+  const [results, setResults] = useState([]);
   const [searchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
@@ -20,24 +20,55 @@ const ResultPage = () => {
   };
   const { trips, setTrips } = useTripContext();
 
+  const types = [
+    {
+      profile: "car",
+      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
+        ironhack.lng
+      }&point=${lat},${lng}&locale=en&key=${
+        import.meta.env.VITE_GRAPHHOPPER_API_KEY
+      }&profile=car`,
+    },
+    {
+      profile: "bike",
+      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
+        ironhack.lng
+      }&point=${lat},${lng}&locale=en&key=${
+        import.meta.env.VITE_GRAPHHOPPER_API_KEY
+      }&profile=bike`,
+    },
+    {
+      profile: "foot",
+      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
+        ironhack.lng
+      }&point=${lat},${lng}&locale=en&key=${
+        import.meta.env.VITE_GRAPHHOPPER_API_KEY
+      }&profile=foot`,
+    },
+  ];
+
+  const requests = types.map((type) => {
+    return {
+      request: axios.get(type.url),
+      profile: type.profile,
+    };
+  });
+
+  //https://www.storyblok.com/tp/how-to-send-multiple-requests-using-axios
+
   useEffect(() => {
     if (lat && lng && destination && ironhack.lat && ironhack.lng) {
       axios
-        .get(
-          `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
-            ironhack.lng
-          }&point=${lat},${lng}&locale=en&key=${
-            import.meta.env.VITE_GRAPHHOPPER_API_KEY
-          }`
-        )
-        .then((response) => {
-          console.log(response.data);
-          setResult({
-            distance: response.data.paths[0].distance,
-            time: response.data.paths[0].time,
-            destination,
-          });
-          setTrips([...trips, result]);
+        .all(requests.map((req) => req.request))
+        .then((responses) => {
+          const newResults = responses.map((res, index) => ({
+            destination: destination,
+            distance: (res.data.paths[0].distance / 1000).toFixed(2),
+            time: res.data.paths[0].time / 60000,
+            profile: requests[index].profile,
+          }));
+
+          setResults(newResults);
         })
         .catch((error) => {
           console.log(error.response);
@@ -51,7 +82,7 @@ const ResultPage = () => {
       {!lat || !lng ? (
         <UserInput />
       ) : (
-        result && <ResultContainer result={result} />
+        results && <ResultContainer results={results} />
       )}
     </PageContainer>
   );

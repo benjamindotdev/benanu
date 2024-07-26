@@ -17,7 +17,7 @@ const TripProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5005/trips`)
+      .get(`http://seeo2-backend-production.up.railway.app/trips`)
       .then((response) => {
         setTrips(response.data);
       })
@@ -26,7 +26,7 @@ const TripProvider = ({ children }) => {
       });
 
     axios
-      .get(`http://localhost:5005/users`)
+      .get(`http://seeo2-backend-production.up.railway.app/users`)
       .then((response) => {
         setUsers(response.data);
       })
@@ -37,7 +37,7 @@ const TripProvider = ({ children }) => {
 
   const postData = (reqBody) => {
     axios
-      .post(`http://localhost:5005/trips`, {
+      .post(`http://seeo2-backend-production.up.railway.app/trips`, {
         origin: ironhack,
         ...reqBody,
       })

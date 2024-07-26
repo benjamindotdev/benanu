@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useTripContext } from "../context/TripProvider";
 import PageSubHeader from "./PageSubHeader";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -48,10 +47,10 @@ export default function UserInputForm() {
         </button>
       </div>
       <ul className="flex flex-col gap-2">
-        {responses.map((response) => (
+        {responses.map((response, index) => (
           <Link
             to={`/result?lat=${response.point.lat}&lng=${response.point.lng}&destination=${response.name}`}
-            key={response.osm_id}
+            key={response.osm_id + index}
             className="flex flex-row gap-2 p-2 bg-primary text-dark font-bold rounded-xl "
           >
             <p>
