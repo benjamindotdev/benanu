@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = () => {
   return (
     <div className="w-full">
@@ -93,10 +91,6 @@ const Contact = () => {
               <br />
               Berlin, 10407
             </p>
-          </div>
-          <div className="text-center mb-8 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-            <p className="text-gray-700">+49 15226175744</p>
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
