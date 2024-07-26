@@ -9,20 +9,15 @@ import ResultPage from "./pages/ResultPage";
 import AdminPage from "./pages/AdminPage";
 import Footer from "./components/Footer";
 
-const socials = {
-  benjamin: "https://github.com/benjamindotdev/",
-  senanu: "https://github.com/Senalniho",
-};
-
 const App = () => {
   return (
-    <div className="mx-auto h-full w-full relative">
-      <Navbar socials={socials} />
-      <main className="h-[100%] top-0 absolute flex flex-col overflow-auto justify-start items-center z-0">
+    <div className="flex flex-col items-center h-full w-full relative bg-slate-900">
+      <Navbar />
+      <main className="mx-auto top-0 absolute flex flex-col overflow-auto justify-start items-center z-0">
         <Routes>
-          <Route path="/" element={<LandingPage socials={socials} />} />
-          <Route path="/about" element={<AboutPage socials={socials} />} />
-          <Route path="/contact" element={<ContactPage socials={socials} />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/result" element={<ResultPage />} />
           <Route path="/admin" element={<AdminPage />} />

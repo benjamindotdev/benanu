@@ -9,6 +9,7 @@ export default function HeroSection() {
         playsInline
         loop
         muted
+        preload="none"
         className="h-full w-full object-cover brightness-50"
       />
     </section>

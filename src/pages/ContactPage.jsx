@@ -2,12 +2,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import PageContainer from "../components/PageContainer";
-import Contact from "../components/Contact";
+// import Contact from "../components/Contact";
+import TeamMembers from "../components/TeamMembers";
 
-const ContactPage = ({ socials }) => {
+const ContactPage = () => {
   return (
     <PageContainer>
-      <Contact />
+      {/* <Contact /> */}
+      <TeamMembers />
     </PageContainer>
   );
 };

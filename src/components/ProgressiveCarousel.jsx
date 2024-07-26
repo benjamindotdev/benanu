@@ -46,8 +46,8 @@ const ProgressiveCarousel = () => {
   };
 
   return (
-    <div className="relative w-full min-w-4xl mx-auto">
-      <div className="overflow-hidden relative h-64 md:h-80 lg:h-96">
+    <div className="relative w-3/4 mx-auto">
+      <div className="overflow-hidden relative h-[300px]">
         <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}

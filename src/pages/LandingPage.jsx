@@ -1,6 +1,3 @@
-import ProgressiveCarousel from "../components/ProgressiveCarousel";
-import WhyChooseUs from "../components/WhyChooseUs";
-import TeamMembers from "../components/TeamMembers";
 import HeroSection from "../components/HeroSection";
 
 // Ensure the correct path for Swiper CSS
@@ -13,19 +10,14 @@ export default function LandingPage() {
         <p className="text-6xl text-left text-white">
           Emissions visibility <br />
           for immediate <br />
-          <span className="text-6xl font-bold text-orange-500"> impact</span>
+          <span className="text-9xl font-bold text-secondary"> impact</span>
         </p>
-        <p className="text-2xl text-white mt-10 self-end">
+        <p className="text-5xl text-white mt-10 self-end">
           This platform provides real-time <br />
           emissions data to make reliable <br />
           decisions.
         </p>
       </section>
-
-      <ProgressiveCarousel />
-      {/* <LandingPageCarousel /> */}
-      <WhyChooseUs />
-      <TeamMembers />
     </div>
   );
 }
