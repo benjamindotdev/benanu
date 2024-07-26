@@ -1,4 +1,3 @@
-import LandingPageCarousel from "../components/LandingPageCarousel";
 import ProgressiveCarousel from "../components/ProgressiveCarousel";
 import WhyChooseUs from "../components/WhyChooseUs";
 import TeamMembers from "../components/TeamMembers";
