@@ -1,20 +1,3 @@
-// /* eslint-disable react/prop-types */
-// import PageContainer from "../components/PageContainer";
-// import PageHeader from "../components/PageHeader";
-// import Hero from "../components/Hero";
-
-// const AboutPage = ({ socials }) => {
-//   return (
-//     <PageContainer>
-//       <PageHeader>About</PageHeader>
-//       <Hero socials={socials} />
-
-//     </PageContainer>
-//   );
-// };
-
-// export default AboutPage;
-
 import React from "react";
 
 const About = () => {
@@ -41,11 +24,12 @@ const About = () => {
 
       {/* Section 2: Something Nice */}
       <section className="bg-green-100 p-8 rounded-lg shadow-lg mb-16">
-        <h2 className="text-3xl font-bold text-center mb-4">Why Choose Us?</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">
+          Why Choose seeO2?
+        </h2>
         <p className="text-gray-700 text-center">
           Our commitment to excellence and sustainability sets us apart. We
-          believe in creating products that not only serve our customers but
-          also protect the environment.
+          believe every effort counts in saving our environment.
         </p>
       </section>
 

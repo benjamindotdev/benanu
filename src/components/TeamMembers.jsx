@@ -2,14 +2,15 @@ import React from "react";
 
 const teamMembers = [
   {
-    image: "https://via.placeholder.com/150",
-    name: "John Doe",
-    role: "Developer",
+    image: "https://ca.slack-edge.com/T075V6BQBRD-U0777UD9FKK-e19ba49cc10d-512",
+    name: "Benjamin Elliott",
+    role: "Senior Backend Developer",
   },
   {
-    image: "https://via.placeholder.com/150",
-    name: "Jane Smith",
-    role: "Designer",
+    image:
+      "https://media.licdn.com/dms/image/C4E03AQG-6fwOkKofTg/profile-displayphoto-shrink_800_800/0/1651685289139?e=1727308800&v=beta&t=yonrzcZQEokCKELpO71cneL2_C8SsI0d1OrxeiW5u-M",
+    name: "Senanu Adjabeng",
+    role: "Senior FrontEnd  Developer",
   },
 ];
 

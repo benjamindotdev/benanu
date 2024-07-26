@@ -2,12 +2,15 @@ import LandingPageCarousel from "../components/LandingPageCarousel";
 import ProgressiveCarousel from "../components/ProgressiveCarousel";
 import WhyChooseUs from "../components/WhyChooseUs";
 import TeamMembers from "../components/TeamMembers";
+import HeroSection from "../components/HeroSection";
 
 // Ensure the correct path for Swiper CSS
 
 export default function LandingPage() {
   return (
     <div className="">
+      <HeroSection />
+
       <section
         className="px-6 py-6 flex flex-col justify-between items-baseline"
         style={{
