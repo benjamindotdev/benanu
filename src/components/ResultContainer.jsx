@@ -1,20 +1,18 @@
 /* eslint-disable react/prop-types */
+import { useSearchParams } from "react-router-dom";
 import ResultCard from "./ResultCard";
 import emissions from "../data/emissions.json";
 
 const ResultContainer = ({ results }) => {
-  //const [isLoading, setIsLoading] = useState(true);
+  const [searchParams] = useSearchParams();
+  const destination = searchParams.get("destination");
 
   return (
     <>
       {results && (
         <div className="flex flex-col w-full gap-6 card justify-start items-start">
-          <h1 className="text-xl text-accent">
-            Destination:{" "}
-            <strong className="text-3xl">{results[0].destination}</strong>
-          </h1>
+          <h1 className="text-xl text-accent">Destination: {destination}</h1>
           {results.map((result, index) => {
-            console.log(emissions[0]);
             return (
               <ResultCard
                 key={index}
