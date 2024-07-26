@@ -9,8 +9,6 @@ import ResultPage from "./pages/ResultPage";
 import AdminPage from "./pages/AdminPage";
 import Footer from "./components/Footer";
 
-//link for data "https://ourworldindata.org/travel-carbon-footprint";
-
 const socials = {
   benjamin: "https://github.com/benjamindotdev/",
   senanu: "https://github.com/Senalniho",
@@ -18,9 +16,9 @@ const socials = {
 
 const App = () => {
   return (
-    <div className=" mx-auto h-full w-[600px] md:w-[800px] lg:w-[1000px] xl:[1200px]">
+    <div className="mx-auto h-full w-full relative">
       <Navbar socials={socials} />
-      <main className="h-[90%] flex flex-col overflow-auto justify-start items-center">
+      <main className="h-[100%] top-0 absolute flex flex-col overflow-auto justify-start items-center z-0">
         <Routes>
           <Route path="/" element={<LandingPage socials={socials} />} />
           <Route path="/about" element={<AboutPage socials={socials} />} />

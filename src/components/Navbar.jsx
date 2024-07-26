@@ -30,16 +30,16 @@ const links = [
 
 const Navbar = ({ socials }) => {
   return (
-    <nav className=" py-0 my-0 px-6 bg-light text-white h-[5%] hover:shadow-2xl flex flex-row justify-between items-center rounded-b-3xl">
-      <h1 className="hover:text-dark text-2xl font-bold">seeO2</h1>
+    <nav className=" z-10 py-0 my-0 relative mx-auto px-6 bg-transparent text-white h-[10%] flex flex-row justify-between items-center rounded-b-3xl w-[600px] md:w-[800px] lg:e-[1000px] xl:w-[1200px]">
+      <h1 className="hover:text-light text-2xl font-bold">seeO2</h1>
       <ul className="flex flex-row gap-6 font-bold">
         {links.map((link) => (
           <li key={link.name}>
             <NavLink
               to={link.path}
-              className="hover:text-accent"
+              className="hover:text-light"
               style={({ isActive }) => {
-                return isActive ? { color: "black" } : {};
+                return isActive ? { color: "pink" } : {};
               }}
             >
               {link.name}
@@ -47,17 +47,14 @@ const Navbar = ({ socials }) => {
           </li>
         ))}
         <details className="dropdown">
-          <summary className="hover:text-dark">Socials</summary>
-          <ul
-            tabIndex={0}
-            className="menu dropdown-content bg-light text-white shadow-lg"
-          >
+          <summary className="hover:text-light">Socials</summary>
+          <ul tabIndex={0} className="menu dropdown-content text-white">
             <li>
               <a
                 href={socials.benjamin}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-dark"
+                className="hover:text-light"
               >
                 @benjamin
               </a>
@@ -67,7 +64,7 @@ const Navbar = ({ socials }) => {
                 href={socials.senanu}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-dark"
+                className="hover:text-light"
               >
                 @senanu
               </a>

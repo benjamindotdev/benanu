@@ -10,16 +10,7 @@ export default function LandingPage() {
   return (
     <div className="">
       <HeroSection />
-
-      <section
-        className="px-6 py-6 flex flex-col justify-between items-baseline"
-        style={{
-          backgroundImage: `url(https://one-more-tree.org/wp-content/uploads/2024/02/view-green-forest-trees-with-co2-870x563.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "60vh", // Adjust the height to your liking
-        }}
-      >
+      <section className="px-[10vw] py-[15vh] flex flex-col justify-between items-baseline h-full w-full z-10 top-0 absolute">
         <p className="text-6xl text-left text-white">
           Emissions visibility <br />
           for immediate <br />
