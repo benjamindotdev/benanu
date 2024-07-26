@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function LandingPageCarousel() {
   return (
     <section className="flex justify-center items-center h-[60vh] bg-primary">

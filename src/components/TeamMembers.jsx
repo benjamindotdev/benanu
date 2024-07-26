@@ -1,5 +1,3 @@
-import React from "react";
-
 const teamMembers = [
   {
     image: "https://ca.slack-edge.com/T075V6BQBRD-U0777UD9FKK-e19ba49cc10d-512",

@@ -1,6 +1,6 @@
 import PageContainer from "../components/PageContainer";
-import PageHeader from "../components/PageHeader";
-import PageText from "../components/PageText";
+//import PageHeader from "../components/PageHeader";
+//import PageText from "../components/PageText";
 import Dashboard from "../components/Dashboard";
 
 const DashboardPage = () => {

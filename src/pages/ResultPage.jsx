@@ -6,7 +6,6 @@ import ResultContainer from "../components/ResultContainer";
 import { useSearchParams } from "react-router-dom";
 import UserInput from "../components/UserInput";
 import axios from "axios";
-import { useTripContext } from "../context/TripProvider";
 
 const ResultPage = () => {
   const [results, setResults] = useState([]);
@@ -18,7 +17,6 @@ const ResultPage = () => {
     lat: 52.53308,
     lng: 13.45321,
   };
-  const { trips, setTrips } = useTripContext();
 
   const types = [
     {
