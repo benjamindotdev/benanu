@@ -89,18 +89,19 @@ const Contact = () => {
           <div className="text-center mb-8 md:mb-0">
             <h3 className="text-xl font-semibold mb-2">Our Office</h3>
             <p className="text-gray-700">
-              123 Main Street, Suite 100
+              Storkower Str. 132
               <br />
-              City, State, ZIP Code
+              Berlin, 10407
             </p>
           </div>
           <div className="text-center mb-8 md:mb-0">
             <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-            <p className="text-gray-700">+1 (123) 456-7890</p>
+            <p className="text-gray-700">+49 15226175744</p>
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-            <p className="text-gray-700">info@company.com</p>
+            <p className="text-gray-700">senanuadjabeng1@gmail.com</p>
+            <p className="text-gray-700">hello@benjamin.dev</p>
           </div>
         </div>
       </section>
