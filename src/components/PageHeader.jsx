@@ -2,7 +2,9 @@
 
 const PageHeader = ({ children }) => {
   return (
-    <h1 className="p-6 text-5xl font-bold text-light self-start">{children}</h1>
+    <h1 className="p-6 text-5xl font-bold text-primary self-start">
+      {children}
+    </h1>
   );
 };
 

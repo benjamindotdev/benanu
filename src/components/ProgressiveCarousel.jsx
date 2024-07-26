@@ -71,13 +71,13 @@ const ProgressiveCarousel = () => {
       </div>
       <button
         onClick={goToPrevious}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2  text-light rounded-full hover:bg-accent"
       >
         &lt;
       </button>
       <button
         onClick={goToNext}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2  text-light rounded-full hover:bg-accent"
       >
         &gt;
       </button>

@@ -11,7 +11,12 @@ const ResultContainer = ({ results }) => {
     <>
       {results && (
         <div className="flex flex-col w-full gap-6 card justify-start items-start">
-          <h1 className="text-xl text-accent">Destination: {destination}</h1>
+          <h1 className="text-xl text-accent">
+            Destination:{" "}
+            <strong className="text-3xl font-sans text-secondary">
+              {destination}
+            </strong>
+          </h1>
           {results.map((result, index) => {
             return (
               <ResultCard

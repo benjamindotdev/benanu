@@ -2,6 +2,7 @@ import PageContainer from "../components/PageContainer";
 //import PageHeader from "../components/PageHeader";
 //import PageText from "../components/PageText";
 import Dashboard from "../components/Dashboard";
+import UserInput from "../components/UserInput";
 
 const DashboardPage = () => {
   return (
@@ -29,6 +30,7 @@ const DashboardPage = () => {
           suscipit.
         </PageText>
       </div> */}
+      <UserInput />
       <Dashboard />
     </PageContainer>
   );

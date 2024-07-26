@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import {
   FaGithub,
   FaServer,
@@ -7,77 +8,60 @@ import {
 } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiRailway, SiNetlify, SiDaisyui } from "react-icons/si";
+import FooterIcon from "./FooterIcon";
+
+const items = [
+  {
+    name: "React",
+    link: "https://reactjs.org/",
+    icon: <FaReact />,
+  },
+  {
+    name: "Node.js",
+    link: "https://nodejs.org/",
+    icon: <FaNodeJs />,
+  },
+  {
+    name: "Tailwind CSS",
+    link: "https://tailwindcss.com/",
+    icon: <RiTailwindCssFill />,
+  },
+  {
+    name: "DaisyUI",
+    link: "https://daisyui.com/",
+    icon: <SiDaisyui />,
+  },
+  {
+    name: "Netlify",
+    link: "https://www.netlify.com/",
+    icon: <SiNetlify />,
+  },
+  {
+    name: "GitHub",
+    link: "https://github.com/benjamindotdev/seeo2-frontend",
+    icon: [<FaComputer />, <FaGithub />],
+  },
+  {
+    name: "Railway",
+    link: "https://railway.app",
+    icon: <SiRailway />,
+  },
+  {
+    name: "GitHub",
+    link: "https://github.com/benjamindotdev/seeo2-backend",
+    icon: [<FaServer />, <FaGithub />],
+  },
+];
 
 export default function Footer() {
   return (
     <footer className="footer footer-center bg-light text-white rounded-t-3xl p-10 z-10 pt-0 pb-6 my-0 absolute bottom-0 bg-transparent flex flex-col gap-2">
       <div className="grid grid-flow-col gap-8">
-        <a
-          href="https://reactjs.org/"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <FaReact />
-        </a>
-        <a
-          href="https://nodejs.org/"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <FaNodeJs />
-        </a>
-        <a
-          href="https://tailwindcss.com/"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <RiTailwindCssFill />
-        </a>
-        <a
-          href="https://daisyui.com/"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <SiDaisyui />
-        </a>
-        <a
-          href="https://www.netlify.com/"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <SiNetlify />
-        </a>
-        <a
-          href="https://github.com/benjamindotdev/seeo2-frontend"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <FaComputer />
-          <FaGithub />
-        </a>
-        <a
-          href="https://railway.app"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <SiRailway />
-        </a>
-        <a
-          href="https://github.com/benjamindotdev/seeo2-backend"
-          target="_blank"
-          rel="noreferrer"
-          className=" flex flex-row gap-1 text-4xl text-white hover:text-light"
-        >
-          <FaServer />
-          <FaGithub />
-        </a>
+        {items.map((item, index) => (
+          <FooterIcon key={index} link={item.link}>
+            {item.icon}
+          </FooterIcon>
+        ))}
       </div>
       <aside>
         <p>
