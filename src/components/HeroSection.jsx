@@ -1,6 +1,3 @@
-import React from "react";
-import ReactPlayer from "react-player";
-
 import Video from "../assets/SeeO2.mp4";
 
 export default function HeroSection() {
