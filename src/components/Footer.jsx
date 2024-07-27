@@ -9,6 +9,7 @@ import {
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiRailway, SiNetlify, SiDaisyui } from "react-icons/si";
 import FooterIcon from "./FooterIcon";
+import { useThemeContext } from "../context/ThemeContext";
 
 const items = [
   {
@@ -54,8 +55,13 @@ const items = [
 ];
 
 export default function Footer() {
+  const { theme } = useThemeContext();
   return (
-    <footer className="footer footer-center bg-light text-white rounded-t-3xl p-10 z-10 pt-0 pb-6 my-0 absolute bottom-0 bg-transparent flex flex-col gap-2">
+    <footer
+      className={`footer footer-center rounded-t-3xl p-10 z-10 pt-0 pb-6 my-0 absolute bottom-0 bg-transparent flex flex-col gap-2 ${
+        theme === "light" ? "text-dark" : "text-light"
+      }`}
+    >
       <div className="grid grid-flow-col gap-8">
         {items.map((item, index) => (
           <FooterIcon key={index} link={item.link}>

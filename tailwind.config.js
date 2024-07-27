@@ -11,11 +11,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        light: "#F5F5F5",
+        light: "#ffffff",
+        light2: "#F5F5F5",
         primary: "#74FF5C",
         secondary: "#D99445",
         accent: "#DE99A3",
-        dark: "#283618",
+        dark: "#1F2A13",
+        dark2: "#283618",
       },
       fontFamily: {
         serif: ["Playfair Display", "serif"],

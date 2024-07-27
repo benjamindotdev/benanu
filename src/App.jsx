@@ -8,10 +8,14 @@ import DashboardPage from "./pages/DashboardPage";
 import ResultPage from "./pages/ResultPage";
 import AdminPage from "./pages/AdminPage";
 import Footer from "./components/Footer";
+import { useThemeContext } from "./context/ThemeContext";
 
 const App = () => {
+  const { theme } = useThemeContext();
   return (
-    <div className="flex flex-col items-center h-full w-full relative bg-dark">
+    <div
+      className={`flex flex-col items-center h-full w-full relative bg-${theme}`}
+    >
       <Navbar />
       <main className="mx-auto top-0 absolute flex flex-col overflow-auto justify-start items-center z-0">
         <Routes>
@@ -21,7 +25,7 @@ const App = () => {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/result" element={<ResultPage />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/admin/:db/:id" element={<AdminPage />} />
+          {/* <Route path="/admin/:db/:id" element={<AdminPage />} /> */}
         </Routes>
       </main>
       <Footer />

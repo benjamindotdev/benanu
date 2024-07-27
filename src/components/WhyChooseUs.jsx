@@ -1,3 +1,5 @@
+import { useThemeContext } from "../context/ThemeContext";
+
 const reasons = [
   {
     icon: "🌍",
@@ -38,18 +40,22 @@ const reasons = [
 ];
 
 const WhyChooseUs = () => {
+  const { theme } = useThemeContext();
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-8">Why seeO2</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-8">
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg text-center"
+            className={`flex flex-col items-center p-6 rounded-3xl shadow-lg text-center bg-${
+              theme === "light" ? "light2" : "dark2"
+            }`}
           >
             <div className="text-4xl mb-4">{reason.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-            <p className="text-gray-600">{reason.description}</p>
+            <h3 className="text-xl font-semibold mb-2 text-accent">
+              {reason.title}
+            </h3>
+            <p className="">{reason.description}</p>
           </div>
         ))}
       </div>
