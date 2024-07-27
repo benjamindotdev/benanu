@@ -1,12 +1,17 @@
 import ProgressiveCarousel from "../components/ProgressiveCarousel";
 import WhyChooseUs from "../components/WhyChooseUs";
 import PageContainer from "../components/PageContainer";
+import PageHeader from "../components/PageHeader";
+import PageSubHeader from "../components/PageSubHeader";
 
 const About = () => {
   return (
     <PageContainer>
+      <PageHeader>About</PageHeader>
+      <PageSubHeader>The time to act is now</PageSubHeader>
       <ProgressiveCarousel />
       {/* <LandingPageCarousel /> */}
+      <PageSubHeader>Why Choose seeO2?</PageSubHeader>
       <WhyChooseUs />
       {/* Section 1: Introduction */}
       <div className="flex flex-col justify-start gap-6 w-3/4">
@@ -20,7 +25,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 md:pl-8">
             <h2 className="text-3xl font-bold mb-4">Welcome to Our Journey</h2>
-            <p className="text-gray-700 text-lg">
+            <p className=" text-lg">
               We are dedicated to making the world a better place through
               innovative solutions and sustainable practices. Join us on our
               mission to create a positive impact and make a difference.
@@ -29,11 +34,11 @@ const About = () => {
         </section>
 
         {/* Section 2: Something Nice */}
-        <section className="bg-green-100 p-8 rounded-lg shadow-lg">
+        <section className="p-8 rounded-lg ">
           <h2 className="text-3xl font-bold text-center mb-4">
             Why Choose seeO2?
           </h2>
-          <p className="text-gray-700 text-center">
+          <p className=" text-center">
             Our commitment to excellence and sustainability sets us apart. We
             believe every effort counts in saving our environment.
           </p>
@@ -42,7 +47,7 @@ const About = () => {
         {/* Section 3: Our Story */}
         <section className="">
           <h2 className="text-3xl font-bold text-center mb-4">Our Story</h2>
-          <p className="text-gray-700">
+          <p className="">
             Our journey began with a simple idea: to make a difference. From
             humble beginnings, we have grown into a company that values
             innovation, integrity, and sustainability. Our team is passionate
@@ -53,22 +58,19 @@ const About = () => {
         </section>
 
         {/* Section 4: Join Us */}
-        <section className="bg-blue-100 p-8 rounded-lg shadow-lg text-center">
+        <section className=" p-8 rounded-lg  text-center">
           <h2 className="text-3xl font-bold mb-4">Join Us & Save the Planet</h2>
-          <p className="text-gray-700 mb-4">
+          <p className=" mb-4">
             Together, we can make a difference. Join us in our mission to create
             a sustainable future. Your support and involvement are crucial to
             our success.
           </p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600">
-            Get Involved
-          </button>
         </section>
 
         {/* Section 5: More About Us */}
         <section>
           <h2 className="text-3xl font-bold text-center mb-4">More About Us</h2>
-          <p className="text-gray-700 text-center">
+          <p className="text-center">
             Our company is built on a foundation of trust, innovation, and a
             commitment to excellence. We are proud of the work we do and the
             impact we have on the world. Learn more about our team, our values,
