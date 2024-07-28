@@ -4,7 +4,7 @@ import PageContainer from "../components/PageContainer";
 import PageHeader from "../components/PageHeader";
 import ResultContainer from "../components/ResultContainer";
 import { useSearchParams } from "react-router-dom";
-import UserInput from "../components/UserInput";
+import DestinationInput from "../components/DestinationInput";
 import axios from "axios";
 
 const ResultPage = () => {
@@ -76,7 +76,7 @@ const ResultPage = () => {
     <PageContainer>
       <PageHeader>Result</PageHeader>
       {!lat || !lng ? (
-        <UserInput />
+        <DestinationInput />
       ) : (
         results && <ResultContainer results={results} />
       )}

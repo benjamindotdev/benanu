@@ -1,13 +1,13 @@
 import AdminDashboard from "../components/AdminDashboard";
 import PageContainer from "../components/PageContainer";
 import PageHeader from "../components/PageHeader";
-import UserInput from "../components/UserInput";
+import DestinationInput from "../components/DestinationInput";
 
 const AdminPage = () => {
   return (
     <PageContainer>
       <PageHeader>Admin</PageHeader>
-      <UserInput />
+      <DestinationInput />
       <AdminDashboard />
     </PageContainer>
   );
