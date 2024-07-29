@@ -16,35 +16,92 @@ const TripProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    getAllTrips();
+    getAllUsers();
+  }, []);
+
+  const getTrip = (tripId) => {
     axios
-      .get(`http://seeo2-backend-production.up.railway.app/trips`)
+      .get(`https://seeo2-backend-production.up.railway.app//trips/${tripId}`)
       .then((response) => {
-        setTrips(response.data);
+        setTrip(response.data);
       })
       .catch((error) => {
         console.log(error.response);
       });
+  };
 
+  const getUser = (userId) => {
     axios
-      .get(`http://seeo2-backend-production.up.railway.app/users`)
+      .get(`https://seeo2-backend-production.up.railway.app//users/${userId}`)
       .then((response) => {
         setUsers(response.data);
       })
       .catch((error) => {
         console.log(error.response);
       });
-  }, []);
+  };
 
-  const postData = (reqBody) => {
+  const getAllTrips = () => {
     axios
-      .post(`http://seeo2-backend-production.up.railway.app/trips`, {
+      .get(`https://seeo2-backend-production.up.railway.app//trips`)
+      .then((response) => {
+        setTrips(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+
+  const getAllUsers = () => {
+    axios
+      .get(`https://seeo2-backend-production.up.railway.app//users`)
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+
+  const postTrip = (reqBody) => {
+    const id = trips.length + 1;
+    axios
+      .post(`https://seeo2-backend-production.up.railway.app//trips`, {
         origin: ironhack,
+        id,
         ...reqBody,
       })
       .then((response) => {
-        setTrip(response.data).catch((error) => {
-          console.log(error.response);
-        });
+        setTrip(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+
+  const deleteUser = (userId) => {
+    axios
+      .delete(
+        `https://seeo2-backend-production.up.railway.app//users/${userId}`
+      )
+      .then((response) => {
+        setUsers(users.filter((user) => user.id !== userId));
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+
+  const deleteTrip = (tripId) => {
+    axios
+      .delete(`https://seeo2-backend-production.up.railway.app/trips/${tripId}`)
+      .then((response) => {
+        setTrips(trips.filter((trip) => trip.id !== tripId));
+      })
+      .catch((error) => {
+        console.log(error.response);
       });
   };
 
@@ -57,7 +114,13 @@ const TripProvider = ({ children }) => {
         setUsers,
         trip,
         setTrip,
-        postData,
+        postTrip,
+        getTrip,
+        getUser,
+        deleteUser,
+        getAllTrips,
+        getAllUsers,
+        deleteTrip,
       }}
     >
       {children}
