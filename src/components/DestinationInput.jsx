@@ -4,16 +4,20 @@ import PageSubHeader from "./PageSubHeader";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../context/ThemeContext";
+import { useTripContext } from "../context/TripProvider";
 
 export default function UserInputForm() {
-  //const { postData } = useTripContext();
   const [destination, setDestination] = useState("");
   const [responses, setResponses] = useState([]);
+  const { postTrip } = useTripContext();
   const { theme } = useThemeContext();
 
   const handleChange = (e) => {
-    //postData({ destination });
     setDestination(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    postTrip();
   };
 
   useEffect(() => {
@@ -77,6 +81,7 @@ export default function UserInputForm() {
             <Link
               to={`/result?lat=${response.point.lat}&lng=${response.point.lng}&destination=${response.name}`}
               key={response.osm_id + index}
+              onClick={handleSubmit}
               className={`flex flex-row gap-2 p-2 font-bold opacity-50 hover:bg-accent hover:opacity-100 hover:text-dark ${
                 theme === "light" ? "bg-light2 " : "bg-dark2"
               }`}
