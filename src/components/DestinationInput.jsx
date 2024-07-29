@@ -17,8 +17,8 @@ export default function UserInputForm() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      destination.length > 2 &&
+    if (destination.length > 2) {
+      const timeoutId = setTimeout(() => {
         axios
           .get(
             `https://graphhopper.com/api/1/geocode?q=${destination}&locale=en&key=${
@@ -33,15 +33,13 @@ export default function UserInputForm() {
               error.response,
               import.meta.env.VITE_GRAPHHOPPER_API_KEY
             );
-          })
-          .finally(() => {
-            console.log(responses);
           });
-    }, 300);
-  }, [responses, destination]);
+      }, 300);
 
-  useEffect(() => {
-    destination === "" && setResponses([]);
+      return () => clearTimeout(timeoutId);
+    } else {
+      setResponses([]);
+    }
   }, [destination]);
 
   return (
@@ -65,20 +63,12 @@ export default function UserInputForm() {
         <input
           type="text"
           value={destination}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           placeholder="Enter your destination"
           className={`input w-full shadow-xl rounded-md border-secondary focus:border-accent focus:ring focus:ring-primary focus:ring-opacity-50 ${
             theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
           }`}
         />
-        {/* <button
-          className={`btn border-0 shadow-xl hover:bg-secondary ${
-            theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
-          }`}
-          onClick={(e) => handleClick(e)}
-        >
-          Search
-        </button> */}
       </div>
       <ul className="flex flex-col gap-2">
         {responses &&
