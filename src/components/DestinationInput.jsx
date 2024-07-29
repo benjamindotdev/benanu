@@ -16,8 +16,8 @@ export default function UserInputForm() {
     setDestination(e.target.value);
   };
 
-  const handleSubmit = () => {
-    postTrip();
+  const handleSubmit = (lat, lng, destination) => {
+    postTrip(lat, lng, destination);
   };
 
   useEffect(() => {
@@ -81,7 +81,13 @@ export default function UserInputForm() {
             <Link
               to={`/result?lat=${response.point.lat}&lng=${response.point.lng}&destination=${response.name}`}
               key={response.osm_id + index}
-              onClick={handleSubmit}
+              onClick={() =>
+                handleSubmit(
+                  response.point.lat,
+                  response.point.lng,
+                  response.name
+                )
+              }
               className={`flex flex-row gap-2 p-2 font-bold opacity-50 hover:bg-accent hover:opacity-100 hover:text-dark ${
                 theme === "light" ? "bg-light2 " : "bg-dark2"
               }`}

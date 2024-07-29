@@ -17,12 +17,15 @@ const TripProvider = ({ children }) => {
 
   useEffect(() => {
     getAllTrips();
+  }, [trips]);
+
+  useEffect(() => {
     getAllUsers();
-  }, []);
+  }, [users]);
 
   const getTrip = (tripId) => {
     axios
-      .get(`https://seeo2-backend-production.up.railway.app//trips/${tripId}`)
+      .get(`https://seeo2-backend-production.up.railway.app/trips/${tripId}`)
       .then((response) => {
         setTrip(response.data);
       })
@@ -33,7 +36,7 @@ const TripProvider = ({ children }) => {
 
   const getUser = (userId) => {
     axios
-      .get(`https://seeo2-backend-production.up.railway.app//users/${userId}`)
+      .get(`https://seeo2-backend-production.up.railway.app/users/${userId}`)
       .then((response) => {
         setUsers(response.data);
       })
@@ -44,7 +47,7 @@ const TripProvider = ({ children }) => {
 
   const getAllTrips = () => {
     axios
-      .get(`https://seeo2-backend-production.up.railway.app//trips`)
+      .get(`https://seeo2-backend-production.up.railway.app/trips`)
       .then((response) => {
         setTrips(response.data);
       })
@@ -55,7 +58,7 @@ const TripProvider = ({ children }) => {
 
   const getAllUsers = () => {
     axios
-      .get(`https://seeo2-backend-production.up.railway.app//users`)
+      .get(`https://seeo2-backend-production.up.railway.app/users`)
       .then((response) => {
         setUsers(response.data);
       })
@@ -64,14 +67,23 @@ const TripProvider = ({ children }) => {
       });
   };
 
-  const postTrip = (reqBody) => {
+  const postTrip = (lat, lng, destination) => {
     const id = trips.length + 1;
+    const newTrip = {
+      id,
+      origin: {
+        name: "Ironhack, Berlin",
+        lat: ironhack.lat,
+        lng: ironhack.lng,
+      },
+      destination: {
+        name: destination,
+        lat,
+        lng,
+      },
+    };
     axios
-      .post(`https://seeo2-backend-production.up.railway.app//trips`, {
-        origin: ironhack,
-        id,
-        ...reqBody,
-      })
+      .post(`https://seeo2-backend-production.up.railway.app/trips`, newTrip)
       .then((response) => {
         setTrip(response.data);
         console.log(response.data);
@@ -83,9 +95,7 @@ const TripProvider = ({ children }) => {
 
   const deleteUser = (userId) => {
     axios
-      .delete(
-        `https://seeo2-backend-production.up.railway.app//users/${userId}`
-      )
+      .delete(`https://seeo2-backend-production.up.railway.app/users/${userId}`)
       .then((response) => {
         setUsers(users.filter((user) => user.id !== userId));
       })
