@@ -7,10 +7,6 @@ import axios from "axios";
 const TripContext = createContext();
 
 const TripProvider = ({ children }) => {
-  const ironhack = {
-    lat: 52.53308,
-    lng: 13.45321,
-  };
   const [trip, setTrip] = useState({});
   const [trips, setTrips] = useState([]);
   const [users, setUsers] = useState([]);
@@ -68,25 +64,15 @@ const TripProvider = ({ children }) => {
   };
 
   const postTrip = (lat, lng, destination) => {
-    const id = trips.length + 1;
     const newTrip = {
-      id,
-      origin: {
-        name: "Ironhack, Berlin",
-        lat: ironhack.lat,
-        lng: ironhack.lng,
-      },
-      destination: {
-        name: destination,
-        lat,
-        lng,
-      },
+      name: destination,
+      lat,
+      lng,
     };
     axios
       .post(`https://seeo2-backend-production.up.railway.app/trips`, newTrip)
       .then((response) => {
         setTrip(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error.response);

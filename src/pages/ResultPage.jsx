@@ -13,64 +13,28 @@ const ResultPage = () => {
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
   const destination = searchParams.get("destination");
-  const ironhack = {
-    lat: 52.53308,
-    lng: 13.45321,
-  };
-
-  const types = [
-    {
-      profile: "car",
-      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
-        ironhack.lng
-      }&point=${lat},${lng}&locale=en&key=${
-        import.meta.env.VITE_GRAPHHOPPER_API_KEY
-      }&profile=car`,
-    },
-    {
-      profile: "bike",
-      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
-        ironhack.lng
-      }&point=${lat},${lng}&locale=en&key=${
-        import.meta.env.VITE_GRAPHHOPPER_API_KEY
-      }&profile=bike`,
-    },
-    {
-      profile: "foot",
-      url: `https://graphhopper.com/api/1/route?point=${ironhack.lat},${
-        ironhack.lng
-      }&point=${lat},${lng}&locale=en&key=${
-        import.meta.env.VITE_GRAPHHOPPER_API_KEY
-      }&profile=foot`,
-    },
-  ];
-
-  const requests = types.map((type) => {
-    return {
-      request: axios.get(type.url),
-      profile: type.profile,
-    };
-  });
 
   useEffect(() => {
-    if (lat && lng && destination && ironhack.lat && ironhack.lng) {
+    if (lat && lng && destination) {
       axios
-        .all(requests.map((req) => req.request))
-        .then((responses) => {
-          const newResults = responses.map((res, index) => ({
-            destination: destination,
-            distance: (res.data.paths[0].distance / 1000).toFixed(2),
-            time: res.data.paths[0].time / 60000,
-            profile: requests[index].profile,
-          }));
-
-          setResults(newResults);
+        .post("https://seeo2-backend-production.up.railway.app/result", {
+          lat,
+          lng,
+          destination,
+        })
+        .then((response) => {
+          console.log("Response Data:", response.data);
+          setResults(response.data);
         })
         .catch((error) => {
-          console.log(error.response);
+          console.log("Error:", error.response);
         });
     }
-  }, [lat, lng]);
+  }, [lat, lng, destination]);
+
+  useEffect(() => {
+    console.log("Results State:", results);
+  }, [results]);
 
   return (
     <PageContainer>
