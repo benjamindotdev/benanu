@@ -67,10 +67,10 @@ const TripProvider = ({ children }) => {
       lng,
     };
     axios
-      .post(`https://seeo2-backend-production.up.railway.app/trips`, newTrip)
-      .then((response) => {
-        setTrip(response.data);
-      })
+      .post(`https://seeo2-backend-production.up.railway.app/result`, newTrip)
+      // .then((response) => {
+      //   setTrip(response.data);
+      // })
       .catch((error) => {
         console.log(error.response);
       });
