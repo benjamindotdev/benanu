@@ -21,28 +21,19 @@ export default function UserInputForm() {
   };
 
   useEffect(() => {
-    if (destination.length > 2) {
-      const timeoutId = setTimeout(() => {
-        axios
-          .get(
-            `https://graphhopper.com/api/1/geocode?q=${destination}&locale=en&key=${
-              import.meta.env.VITE_GRAPHHOPPER_API_KEY
-            }`
-          )
-          .then((response) => {
-            setResponses(response.data.hits);
-          })
-          .catch((error) => {
-            console.log(
-              error.response,
-              import.meta.env.VITE_GRAPHHOPPER_API_KEY
-            );
-          });
-      }, 300);
-
-      return () => clearTimeout(timeoutId);
-    } else {
+    if (destination === "") {
       setResponses([]);
+    } else {
+      axios
+        .post("https://seeo2-backend-production.up.railway.app/dashboard", {
+          destination,
+        })
+        .then((response) => {
+          setResponses(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
     }
   }, [destination]);
 
