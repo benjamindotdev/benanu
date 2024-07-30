@@ -13,11 +13,8 @@ const TripProvider = ({ children }) => {
 
   useEffect(() => {
     getAllTrips();
-  }, [trips]);
-
-  useEffect(() => {
     getAllUsers();
-  }, [users]);
+  }, []);
 
   const getTrip = (tripId) => {
     axios
