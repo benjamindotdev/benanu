@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import ResultCard from "./ResultCard";
 import emissions from "../data/emissions.json";
