@@ -23,7 +23,6 @@ const ResultPage = () => {
           destination,
         })
         .then((response) => {
-          console.log("Response Data:", response.data);
           setResults(response.data);
         })
         .catch((error) => {
@@ -31,10 +30,6 @@ const ResultPage = () => {
         });
     }
   }, [lat, lng, destination]);
-
-  useEffect(() => {
-    console.log("Results State:", results);
-  }, [results]);
 
   return (
     <PageContainer>
