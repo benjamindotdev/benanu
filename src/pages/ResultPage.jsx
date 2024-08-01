@@ -15,21 +15,18 @@ const ResultPage = () => {
   const destination = searchParams.get("destination");
 
   useEffect(() => {
-    if (lat && lng && destination) {
-      axios
-        .post("https://seeo2-backend-production.up.railway.app/result", {
-          lat,
-          lng,
-          destination,
-        })
-        .then((response) => {
-          console.log("Response Data:", response.data);
-          setResults(response.data);
-        })
-        .catch((error) => {
-          console.log("Error:", error.response);
-        });
-    }
+    axios
+      .post("https://seeo2-backend-production.up.railway.app/result", {
+        lat,
+        lng,
+        destination,
+      })
+      .then((response) => {
+        setResults(response.data);
+      })
+      .catch((error) => {
+        console.log("Error:", error.response);
+      });
   }, []);
 
   return (
