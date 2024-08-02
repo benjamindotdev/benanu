@@ -9,28 +9,24 @@ import axios from "axios";
 
 const ResultPage = () => {
   const [results, setResults] = useState([]);
-  const [hasFetched, setHasFetched] = useState(false);
   const [searchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
   const destination = searchParams.get("destination");
 
   useEffect(() => {
-    if (lat && lng && destination && !hasFetched) {
-      axios
-        .post("https://seeo2-backend-production.up.railway.app/result", {
-          lat,
-          lng,
-          destination,
-        })
-        .then((response) => {
-          setResults(response.data);
-          setHasFetched(true);
-        })
-        .catch((error) => {
-          console.log("Error:", error.response);
-        });
-    }
+    axios
+      .post("https://seeo2-backend-production.up.railway.app/result", {
+        lat,
+        lng,
+        destination,
+      })
+      .then((response) => {
+        setResults(response.data);
+      })
+      .catch((error) => {
+        console.log("Error:", error.response);
+      });
   }, []);
 
   return (

@@ -11,11 +11,6 @@ const TripProvider = ({ children }) => {
   const [trips, setTrips] = useState([]);
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    getAllTrips();
-    getAllUsers();
-  }, []);
-
   const getTrip = (tripId) => {
     axios
       .get(`https://seeo2-backend-production.up.railway.app/trips/${tripId}`)
@@ -66,6 +61,7 @@ const TripProvider = ({ children }) => {
       lat,
       lng,
     };
+    console.log("Posting new trip:", newTrip);
     axios
       .post(`https://seeo2-backend-production.up.railway.app/result`, newTrip)
       // .then((response) => {
