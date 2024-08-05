@@ -15,8 +15,7 @@ const ResultPage = () => {
   const destination = searchParams.get("destination");
 
   useEffect(() => {
-<<<<<<< HEAD
-    if (lat && lng && destination && !hasFetched) {
+    if (lat && lng && destination) {
       axios
         .post("https://seeo2-backend-production.up.railway.app/result", {
           lat,
@@ -25,13 +24,11 @@ const ResultPage = () => {
         })
         .then((response) => {
           setResults(response.data);
-          setHasFetched(true);
         })
         .catch((error) => {
           console.log("Error:", error.response);
         });
     }
-=======
     axios
       .post("https://seeo2-backend-production.up.railway.app/result", {
         lat,
@@ -44,7 +41,6 @@ const ResultPage = () => {
       .catch((error) => {
         console.log("Error:", error.response);
       });
->>>>>>> dev
   }, []);
 
   return (
