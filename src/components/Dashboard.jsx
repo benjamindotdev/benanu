@@ -1,10 +1,25 @@
+import { useTripContext } from "../context/TripProvider";
 import { Bar, Pie } from "react-chartjs-2";
 import Speedometer from "react-d3-speedometer";
 import "chart.js/auto"; // Import to auto-register chart components
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const { getAllTrips } = useTripContext();
+  const [totalCarDistance, setTotalCarDistance] = useState(0);
+  useEffect(() => {
+    const trips = getAllTrips();
+    const totalDistance = trips.reduce(
+      (total, trip) =>
+        total +
+        trip.profiles.find((profile) => profile.profile === "Car").distance,
+      0
+    );
+    setTotalCarDistance(totalDistance);
+  }, []);
+
   const travelData = {
-    distance: 1200, // in km
+    distance: totalCarDistance, // in km
     mode: "Train",
     co2Emissions: 50, // in kg
     co2EmissionsSaved: 100, // in kg
