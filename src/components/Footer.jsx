@@ -10,47 +10,48 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiRailway, SiNetlify, SiDaisyui } from "react-icons/si";
 import FooterIcon from "./FooterIcon";
 import { useThemeContext } from "../context/ThemeContext";
+import { Fragment } from "react";
 
 const items = [
   {
     name: "React",
     link: "https://reactjs.org/",
-    icon: <FaReact />,
+    icons: [<FaReact />],
   },
   {
     name: "Node.js",
     link: "https://nodejs.org/",
-    icon: <FaNodeJs />,
+    icons: [<FaNodeJs />],
   },
   {
     name: "Tailwind CSS",
     link: "https://tailwindcss.com/",
-    icon: <RiTailwindCssFill />,
+    icons: [<RiTailwindCssFill />],
   },
   {
     name: "DaisyUI",
     link: "https://daisyui.com/",
-    icon: <SiDaisyui />,
+    icons: [<SiDaisyui />],
   },
   {
     name: "Netlify",
     link: "https://www.netlify.com/",
-    icon: <SiNetlify />,
+    icons: [<SiNetlify />],
   },
   {
     name: "GitHub",
     link: "https://github.com/benjamindotdev/seeo2-frontend",
-    icon: [<FaComputer />, <FaGithub />],
+    icons: [<FaComputer />, <FaGithub />],
   },
   {
     name: "Railway",
     link: "https://railway.app",
-    icon: <SiRailway />,
+    icons: [<SiRailway />],
   },
   {
     name: "GitHub",
     link: "https://github.com/benjamindotdev/seeo2-backend",
-    icon: [<FaServer />, <FaGithub />],
+    icons: [<FaServer />, <FaGithub />],
   },
 ];
 
@@ -63,11 +64,15 @@ export default function Footer() {
       }`}
     >
       <div className="grid grid-flow-col gap-8">
-        {items.map((item, index) => (
-          <FooterIcon key={index} link={item.link}>
-            {item.icon}
-          </FooterIcon>
-        ))}
+        {items.map((item, index) => {
+          return (
+            <FooterIcon link={item.link} key={index + item.name}>
+              {item.icons.forEach((icon) => {
+                return <Fragment key={icon + index}>{icon}</Fragment>;
+              })}
+            </FooterIcon>
+          );
+        })}
       </div>
       <aside>
         <p>
