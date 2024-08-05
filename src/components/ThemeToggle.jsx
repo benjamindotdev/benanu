@@ -17,6 +17,7 @@ const ThemeToggle = () => {
             : "bg-light [--tglbg:#1F2A13]"
         }`}
         checked={theme === "dark"}
+        onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
       />
       <span className="flex flex-row justify-between px-1 absolute top-1 w-full">
         <MdOutlineLightMode className="text-light text-2xl" />
